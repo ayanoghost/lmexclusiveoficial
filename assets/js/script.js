@@ -30,7 +30,14 @@ const productsData = [
     price: 53.20, description: "O 512 Vip Rose é um perfume contratipo inspirado no 212 Vip Rosé, criado para brindar a mulher livre, sofisticada e segura de si. Logo na primeira borrifada, as notas de champanhe e acordes frutados ganham destaque, trazendo leveza e efervescência à composição. À medida que evolui na pele, revela a delicadeza da flor de pêssego, adicionando feminilidade e suavidade ao perfume. No fundo, o almíscar branco, o âmbar e as notas amadeiradas fazem o arremate aromático, garantindo profundidade e um rastro elegante. Um fragrância para quem deseja a experiência do importado com presença marcante e ótima fixação, ideal para ocasiões especiais ou momentos em que celebrar é o único plano.", 
     tag: "Favorito", 
     areas: ["principal", "destaques"], 
-    image: "" },
+    image: "assets/img/amakhaparis15ml/521viprose15ml/4.png", 
+    images: ["assets/img/amakhaparis15ml/521viprose15ml/4.png",
+              "assets/img/amakhaparis15ml/521viprose15ml/5.png",
+              "assets/img/amakhaparis15ml/521viprose15ml/6.png",
+              "assets/img/amakhaparis15ml/521viprose15ml/7.png",
+    ]
+  },
+    
 
   { 
     id: 3, 
@@ -40,7 +47,14 @@ const productsData = [
     description: "Asadiyy - contratipo inspirado no Asad (Lattafa) Intenso e envolvente, Asadiyy é um contratipo ambarado pensado para homens confiantes, que carregam presença e personalidade em cada detalhe. Uma fragrância marcante, ideal para momentos noturnos e ocasiões em que deixar uma impressão forte faz parte da experiência. A abertura do perfume dupe traz o toque vibrante da pimenta-rosa, do cravo-botão, da bergamota italiana e do grapefruit. No coração, a fragrância evolui para a combinação quente de noz-moscada, canela e cedro, enquanto o fundo revela profundidade com patchouli, musgo e vetiver do Haiti, criando um rastro sofisticado e envolvente. Uma excelente opção para quem aprecia perfumes intensos e quer vivenciar a experiência olfativa de um grande sucesso da perfumaria árabe, com presença marcante e personalidade.", 
     tag: "Novidade", 
     areas: ["lancamentos"], 
-    image: "" },
+    image: "assets/img/amakhaparis15ml/asadiyy15ml/8.png",
+    images: ["assets/img/amakhaparis15ml/asadiyy15ml/8.png",
+              "assets/img/amakhaparis15ml/asadiyy15ml/9.png",
+              "assets/img/amakhaparis15ml/asadiyy15ml/10.png",
+              "assets/img/amakhaparis15ml/asadiyy15ml/11.png",
+    ]
+  
+  },
 
   { 
     id: 4, 
@@ -50,7 +64,15 @@ const productsData = [
     description: "Amakha Paris, com sua dedicação em realçar a essência única de cada indivíduo, apresenta a Deo Colônia Escandalosa. Uma fragrância que não apenas perfuma, mas empodera, celebrando a confiança e a ousadia da mulher moderna. Perfeita para as noites em que você deseja ser notada e deixar uma marca inconfundível, esta essência te acompanha em seus momentos de destaque, reforçando seu estilo e personalidade.", 
     tag: "Estilo", 
     areas: ["principal", "destaques"], 
-    image: "" },
+    image: "assets/img/amakhaparis15ml/escandalosa15ml/12.png",
+    images: ["assets/img/amakhaparis15ml/escandalosa15ml/12.png",
+              "assets/img/amakhaparis15ml/escandalosa15ml/13.png",
+              "assets/img/amakhaparis15ml/escandalosa15ml/14.png",
+              "assets/img/amakhaparis15ml/escandalosa15ml/15.png",
+    ] 
+  
+  },
+
   { 
     id: 5, 
     name: "Fantastic 15ml - Insp. Fantasy", 
@@ -59,7 +81,13 @@ const productsData = [
     description: "A deo colônia feminina Fantastic Amakha Paris combina acordes florais vibrantes com a praticidade do frasco de 15ml, entregando um aroma marcante para acompanhar sua rotina diária com alta fixação e uma performance prolongada na pele e nas roupas. Com um toque aveludado e perfil expressivo, esta fragrância destaca notas florais adocicadas que envolvem a pele sem pesar, ideal para transitar com autenticidade, durabilidade e elegância entre compromissos diurnos e ocasiões noturnas.", 
     tag: "Novidade", 
     areas: ["lancamentos"], 
-    image: "" },
+    image: "assets/img/amakhaparis15ml/fantastic15ml/16.png",
+    images: ["assets/img/amakhaparis15ml/fantastic15ml/16.png",
+              "assets/img/amakhaparis15ml/fantastic15ml/17.png",
+              "assets/img/amakhaparis15ml/fantastic15ml/18.png",
+              
+    ] 
+  },
   { 
     id: 6, 
     name: "GD 15ml - Insp. Good Girl", 
@@ -68,8 +96,14 @@ const productsData = [
     price: 89.90, 
     description: "Celebre sua dualidade e poder com a Deo Colônia GD, uma fragrância que personifica a mulher moderna: forte e delicada, ousada e elegante. Perfeita para as noites em que você quer deixar uma impressão duradoura e inesquecível, esta deo colônia Amakha Paris é o segredo para realçar sua essência mais sedutora.", 
     tag: "Especial", 
-    areas: ["destaques", "lancamentos"], 
-    image: "" }
+    areas: ["destaques"], 
+    image: "assets/img/amakhaparis15ml/gd15ml/19.png",
+    images: ["assets/img/amakhaparis15ml/gd15ml/19.png",
+              "assets/img/amakhaparis15ml/gd15ml/20.png",
+              "assets/img/amakhaparis15ml/gd15ml/21.png",
+              "assets/img/amakhaparis15ml/gd15ml/22.png",
+    ] 
+  }
 ];
 
 const $ = (selector) => document.querySelector(selector);
