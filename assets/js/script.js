@@ -6,23 +6,70 @@ const STORAGE_KEY = "lmExclusiveMobileCart_v1";
 // Edite os produtos abaixo. Para adicionar fotos locais, use caminhos a partir de catalogo_mobile.html,
 // por exemplo: "assets/img/d_denise.png". Se image ficar vazio, será exibido um placeholder elegante.
 const productsData = [
-  { id: 1, 
-    name: "D by Denise Lemos 15ml", 
+  { 
+    id: 1, 
+    name: "D by Denise Lemos 15ml - Insp. La Vie Est Belle", 
     category: "Perfumes", 
     price: 60.00, 
-    description: "Uma fragrância marcante para acompanhar seus melhores momentos.", 
+    description: "O Perfume Feminino D Amakha Paris 15ml convida você a viver uma experiência sensorial única. Esta deo colônia celebra a feminilidade com uma composição floral frutal que cativa e inspira. Perfeito para o uso diário, ele adiciona um toque de leveza e sofisticação à sua presença, tornando cada momento especial. Sua embalagem compacta permite que você leve essa essência encantadora para qualquer lugar, garantindo um toque de frescor sempre que desejar. O Perfume Feminino D Amakha Paris 15ml é uma deo colônia floral frutal que oferece uma experiência olfativa vibrante e irresistível, ideal para a mulher comunicativa e elegante.", 
     tag: "Destaque", 
     areas: ["principal", "destaques"], 
-    image: "assets/img/35.png",
-    images: ["assets/img/35.png","assets/img/36.png"]
+    image: "assets/img/amakhaparis15ml/Ddenise15ml/1.png",
+    images: ["assets/img/amakhaparis15ml/Ddenise15ml/1.png",
+              "assets/img/amakhaparis15ml/Ddenise15ml/2.png",
+              "assets/img/amakhaparis15ml/Ddenise15ml/3.png",
+              
+    ]
     
    },
  
-  { id: 2, name: "Body Splash Glow", category: "Corpo & Banho", price: 53.20, description: "Uma opção leve para sua rotina de autocuidado.", tag: "Favorito", areas: ["principal", "destaques"], image: "" },
-  { id: 3, name: "Perfume Intense", category: "Perfumes", price: 43.90, description: "Uma escolha versátil para o dia a dia ou para presentear.", tag: "Novidade", areas: ["lancamentos"], image: "" },
-  { id: 4, name: "Óculos Elegance", category: "Óculos", price: 79.90, description: "Um acessório para completar seu estilo. Consulte os modelos disponíveis.", tag: "Estilo", areas: ["principal"], image: "" },
-  { id: 5, name: "Relógio Clássico", category: "Relógios", price: 99.90, description: "Design atemporal para diferentes ocasiões. Consulte disponibilidade.", tag: "Novidade", areas: ["lancamentos"], image: "" },
-  { id: 6, name: "Kit Presenteável", category: "Kits", price: 89.90, description: "Uma sugestão para surpreender alguém especial. Confirme a composição do kit.", tag: "Especial", areas: ["destaques", "lancamentos"], image: "" }
+  { 
+    id: 2,
+    name: "521 Vip Rosé 15ml - Insp. 212 Vip Rosé",
+    category: "Perfumes", 
+    price: 53.20, description: "O 512 Vip Rose é um perfume contratipo inspirado no 212 Vip Rosé, criado para brindar a mulher livre, sofisticada e segura de si. Logo na primeira borrifada, as notas de champanhe e acordes frutados ganham destaque, trazendo leveza e efervescência à composição. À medida que evolui na pele, revela a delicadeza da flor de pêssego, adicionando feminilidade e suavidade ao perfume. No fundo, o almíscar branco, o âmbar e as notas amadeiradas fazem o arremate aromático, garantindo profundidade e um rastro elegante. Um fragrância para quem deseja a experiência do importado com presença marcante e ótima fixação, ideal para ocasiões especiais ou momentos em que celebrar é o único plano.", 
+    tag: "Favorito", 
+    areas: ["principal", "destaques"], 
+    image: "" },
+
+  { 
+    id: 3, 
+    name: "Asadiyy 15ml - Insp. Asad", 
+    category: "Perfumes", 
+    price: 43.90, 
+    description: "Asadiyy - contratipo inspirado no Asad (Lattafa) Intenso e envolvente, Asadiyy é um contratipo ambarado pensado para homens confiantes, que carregam presença e personalidade em cada detalhe. Uma fragrância marcante, ideal para momentos noturnos e ocasiões em que deixar uma impressão forte faz parte da experiência. A abertura do perfume dupe traz o toque vibrante da pimenta-rosa, do cravo-botão, da bergamota italiana e do grapefruit. No coração, a fragrância evolui para a combinação quente de noz-moscada, canela e cedro, enquanto o fundo revela profundidade com patchouli, musgo e vetiver do Haiti, criando um rastro sofisticado e envolvente. Uma excelente opção para quem aprecia perfumes intensos e quer vivenciar a experiência olfativa de um grande sucesso da perfumaria árabe, com presença marcante e personalidade.", 
+    tag: "Novidade", 
+    areas: ["lancamentos"], 
+    image: "" },
+
+  { 
+    id: 4, 
+    name: "Escandalosa 15ml - Insp. Scandal", 
+    category: "Perfumes", 
+    price: 79.90, 
+    description: "Amakha Paris, com sua dedicação em realçar a essência única de cada indivíduo, apresenta a Deo Colônia Escandalosa. Uma fragrância que não apenas perfuma, mas empodera, celebrando a confiança e a ousadia da mulher moderna. Perfeita para as noites em que você deseja ser notada e deixar uma marca inconfundível, esta essência te acompanha em seus momentos de destaque, reforçando seu estilo e personalidade.", 
+    tag: "Estilo", 
+    areas: ["principal", "destaques"], 
+    image: "" },
+  { 
+    id: 5, 
+    name: "Fantastic 15ml - Insp. Fantasy", 
+    category: "Perfumes", 
+    price: 99.90, 
+    description: "A deo colônia feminina Fantastic Amakha Paris combina acordes florais vibrantes com a praticidade do frasco de 15ml, entregando um aroma marcante para acompanhar sua rotina diária com alta fixação e uma performance prolongada na pele e nas roupas. Com um toque aveludado e perfil expressivo, esta fragrância destaca notas florais adocicadas que envolvem a pele sem pesar, ideal para transitar com autenticidade, durabilidade e elegância entre compromissos diurnos e ocasiões noturnas.", 
+    tag: "Novidade", 
+    areas: ["lancamentos"], 
+    image: "" },
+  { 
+    id: 6, 
+    name: "GD 15ml - Insp. Good Girl", 
+    //category: "Kits", 
+    category: "Perfumes", 
+    price: 89.90, 
+    description: "Celebre sua dualidade e poder com a Deo Colônia GD, uma fragrância que personifica a mulher moderna: forte e delicada, ousada e elegante. Perfeita para as noites em que você quer deixar uma impressão duradoura e inesquecível, esta deo colônia Amakha Paris é o segredo para realçar sua essência mais sedutora.", 
+    tag: "Especial", 
+    areas: ["destaques", "lancamentos"], 
+    image: "" }
 ];
 
 const $ = (selector) => document.querySelector(selector);
