@@ -123,7 +123,64 @@ const productsData = [
               "assets/img/gloss/cakaila/27.png",
               "assets/img/gloss/cakaila/28.png",
     ] 
+  },
+  
+  { 
+    id: 8, 
+    name: "Relógio LED Quadrado Digital à Prova d'Água", 
+    //category: "Kits", 
+    category: "Relógios", 
+    price: 25.00, 
+    description: "Relógio Digital Quadrado à Prova d'Água com Funções Especiais: Luminoso, Calendário, Indicação de 24 Horas e Exibição de Mês. Estilo Versátil para Ocasiões Coreanas, de Negócios, Lazer e Esportes.", 
+    tag: "destaque", 
+    areas: ["principal", "destaques"], 
+    image: "assets/img/relogioleds/29.png",
+    images: ["assets/img/relogioleds/29.png",
+              "assets/img/relogioleds/30.png",
+              "assets/img/relogioleds/31.png",
+              "assets/img/relogioleds/32.png",
+             
+    ] 
+  },
+  
+  { 
+    id: 9, 
+    name: "Bolsas Feminina Transversal Alça Corrente De Ombro Lateral Pequena", 
+    //category: "Kits", 
+    category: "Bolsas", 
+    price: 65.00, 
+    description: "Nossa bolsa é a garantia de praticidade e muito estilo! Foi desenvolvida pensando em você que não abre mão de uma linda bolsa para compor o seu look e com o tamanho ideal para carregar o necessário. Confeccionada em material sintético de ótima qualidade e durabilidade, possui imã na parte externa e alça transversal de corrente. Para festas ou dia a dia, é o modelo ideal para te acompanhar", 
+    tag: "lançamento", 
+    areas: ["lancamentos"], 
+    image: "assets/img/bolsastransversal01/33.png",
+    images: ["assets/img/bolsastransversal01/33.png",
+              "assets/img/bolsastransversal01/34.png",
+              "assets/img/bolsastransversal01/35.png",
+              "assets/img/bolsastransversal01/36.png",
+              "assets/img/bolsastransversal01/37.png",
+             
+    ] 
+  },
+  
+  { 
+    id: 10, 
+    name: "Óculos Quadrados Sem Armação com Borda.", 
+    //category: "Kits", 
+    category: "Óculos", 
+    price: 35.00, 
+    description: "Óculos de Sol Quadrado Sem Armação com Borda.", 
+    tag: "lançamento", 
+    areas: ["lancamentos"], 
+    image: "assets/img/oculos/oculos01/01.png",
+    images: ["assets/img/oculos/oculos01/01.png",
+              "assets/img/oculos/oculos01/02.png",
+              "assets/img/oculos/oculos01/03.png",
+              "assets/img/oculos/oculos01/04.png",
+              "assets/img/oculos/oculos01/05.png",
+             
+    ] 
   }
+
 ];
 
 const $ = (selector) => document.querySelector(selector);
