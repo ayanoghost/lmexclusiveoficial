@@ -88,6 +88,7 @@ const productsData = [
               
     ] 
   },
+
   { 
     id: 6, 
     name: "GD 15ml - Insp. Good Girl", 
@@ -102,6 +103,25 @@ const productsData = [
               "assets/img/amakhaparis15ml/gd15ml/20.png",
               "assets/img/amakhaparis15ml/gd15ml/21.png",
               "assets/img/amakhaparis15ml/gd15ml/22.png",
+    ] 
+  },
+  
+  { 
+    id: 7, 
+    name: "Gloss Matte CAKAILA – Longa Duração e À Prova D'Água", 
+    //category: "Kits", 
+    category: "Gloss", 
+    price: 13.90, 
+    description: "Gloss com o acabamento sofisticado do batom matte. Sua fórmula aveludada oferece alta pigmentação desde a primeira aplicação, garantindo uma cobertura uniforme, leve e confortável nos lábios. Desenvolvido para durar o dia todo, é resistente à água e de alta fixação, evitando borrões e transferências constantes. A embalagem transparente com tampa prateada traz um design moderno e elegante.", 
+    tag: "Lançamento", 
+    areas: ["lancamentos"], 
+    image: "assets/img/gloss/cakaila/23.png",
+    images: ["assets/img/gloss/cakaila/23.png",
+              "assets/img/gloss/cakaila/24.png",
+              "assets/img/gloss/cakaila/25.png",
+              "assets/img/gloss/cakaila/26.png",
+              "assets/img/gloss/cakaila/27.png",
+              "assets/img/gloss/cakaila/28.png",
     ] 
   }
 ];
