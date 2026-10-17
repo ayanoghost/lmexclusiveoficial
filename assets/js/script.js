@@ -106,7 +106,7 @@ const productsData = [
     ] 
   },
   
-  { 
+ /* { 
     id: 7, 
     name: "Gloss Matte CAKAILA – Longa Duração e À Prova D'Água", 
     //category: "Kits", 
@@ -124,7 +124,7 @@ const productsData = [
               "assets/img/gloss/cakaila/28.png",
     ] 
   },
-  
+    */
   { 
     id: 8, 
     name: "Relógio LED Quadrado Digital à Prova d'Água", 
@@ -152,11 +152,11 @@ const productsData = [
     description: "Nossa bolsa é a garantia de praticidade e muito estilo! Foi desenvolvida pensando em você que não abre mão de uma linda bolsa para compor o seu look e com o tamanho ideal para carregar o necessário. Confeccionada em material sintético de ótima qualidade e durabilidade, possui imã na parte externa e alça transversal de corrente. Para festas ou dia a dia, é o modelo ideal para te acompanhar", 
     tag: "lançamento", 
     areas: ["lancamentos"], 
-    image: "assets/img/bolsastransversal01/33.png",
-    images: ["assets/img/bolsastransversal01/33.png",
+    image: "assets/img/bolsastransversal01/34.png",
+    images: [//"assets/img/bolsastransversal01/33.png",
               "assets/img/bolsastransversal01/34.png",
-              "assets/img/bolsastransversal01/35.png",
-              "assets/img/bolsastransversal01/36.png",
+              //"assets/img/bolsastransversal01/35.png",
+              //"assets/img/bolsastransversal01/36.png",
               "assets/img/bolsastransversal01/37.png",
              
     ] 
