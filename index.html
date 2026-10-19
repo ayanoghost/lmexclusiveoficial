@@ -1,119 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#11100f">
-  <meta name="description" content="Explore a seleção L&M Exclusive e envie seu pedido pelo WhatsApp.">
-  <title>L&M Exclusive — Beleza & Estilo</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="L&M Exclusive — descubra a coleção e acesse sua conta.">
+  <title>L&M Exclusive | Elegância em cada detalhe</title>
+  <style>
+    /* =====================================================
+       L&M EXCLUSIVE — PÁGINA INICIAL
+       Personalize as cores nas variáveis abaixo.
+       ===================================================== */
+    :root {
+      --black: #090909;
+      --panel: #111110;
+      --gold: #d6b46a;
+      --gold-light: #f1d99a;
+      --white: #f8f6f0;
+      --muted: #b6b2a8;
+      --line: rgba(214, 180, 106, .24);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--black);
+      color: var(--white);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+    /* Luzes decorativas de fundo, sem precisar de imagens externas. */
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+    .page-shell::before {
+      width: 460px; height: 460px;
+      top: 90px; right: -190px;
+      background: radial-gradient(circle, rgba(214,180,106,.14), transparent 68%);
+    }
+    .page-shell::after {
+      width: 380px; height: 380px;
+      bottom: 0; left: -190px;
+      background: radial-gradient(circle, rgba(214,180,106,.08), transparent 70%);
+    }
+
+    .topbar {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 13px; }
+    .brand-mark {
+      width: 46px; height: 46px;
+      display: grid; place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      letter-spacing: -2px;
+    }
+    .brand-name { display: block; font-size: 16px; letter-spacing: 3.5px; font-weight: 600; }
+    .brand-caption { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; letter-spacing: 3px; }
+    .top-link {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color .2s ease;
+    }
+    .top-link:hover { color: var(--gold-light); }
+
+    main {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 100px);
+      padding: 70px 0 84px;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+    h1 {
+      max-width: 630px;
+      margin: 24px 0 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(44px, 6.1vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+    }
+    h1 span { color: var(--gold-light); font-style: italic; }
+    .intro {
+      max-width: 480px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 35px; max-width: 500px; }
+    .action {
+      min-height: 58px;
+      padding: 15px 18px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      border: 1px solid var(--gold);
+      font-size: 13px; font-weight: 650; text-align: center;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .action:hover { transform: translateY(-2px); }
+    .action-primary { color: #17130b; background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
+    .action-primary:hover { background: var(--gold-light); }
+    .action-secondary { color: var(--gold-light); background: rgba(255,255,255,.015); }
+    .action-secondary:hover { background: rgba(214,180,106,.09); }
+    .arrow { font-size: 17px; line-height: 1; }
+    .trust-line { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 18px; color: #89867e; font-size: 11px; }
+    .trust-line span { display: inline-flex; align-items: center; gap: 7px; }
+    .tiny-star { color: var(--gold); }
+
+    /* Cartão decorativo que dá destaque visual à página inicial. */
+    .visual { position: relative; min-height: 470px; display: grid; place-items: center; }
+    .halo {
+      position: absolute; width: min(100%, 440px); aspect-ratio: 1;
+      border: 1px solid rgba(214,180,106,.17); border-radius: 50%;
+    }
+    .halo::before, .halo::after { content: ""; position: absolute; border: 1px solid rgba(214,180,106,.12); border-radius: 50%; inset: 25px; }
+    .halo::after { inset: 52px; }
+    .showcase {
+      position: relative; width: min(100%, 370px); min-height: 405px;
+      padding: 30px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: linear-gradient(145deg, rgba(34,32,27,.97), rgba(12,12,11,.98) 62%);
+      border: 1px solid rgba(214,180,106,.42);
+      box-shadow: 0 28px 90px rgba(0,0,0,.55), inset 0 0 40px rgba(214,180,106,.025);
+      transform: rotate(2deg);
+    }
+    .showcase::before { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(214,180,106,.12); pointer-events: none; }
+    .showcase-top, .showcase-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .mini-label { color: var(--muted); font-size: 9px; letter-spacing: 2.4px; text-transform: uppercase; }
+    .seal { width: 42px; height: 42px; border: 1px solid var(--gold); color: var(--gold-light); display: grid; place-items: center; font-family: Georgia, serif; font-size: 17px; }
+    .monogram { text-align: center; padding: 20px 0; }
+    .monogram .lm { color: var(--gold-light); font-family: Georgia, serif; font-size: clamp(82px, 10vw, 116px); letter-spacing: -12px; line-height: 1; padding-right: 12px; }
+    .monogram .rule { width: 58px; height: 1px; margin: 22px auto 17px; background: var(--gold); }
+    .monogram .exclusive { font-size: 11px; letter-spacing: 5px; padding-left: 5px; }
+    .monogram .motto { margin-top: 13px; color: var(--muted); font-family: Georgia, serif; font-size: 14px; font-style: italic; }
+    .showcase-bottom { border-top: 1px solid var(--line); padding-top: 17px; }
+    .corner-note { color: var(--gold); font-size: 10px; letter-spacing: 1.6px; }
+    .floating-note {
+      position: absolute; bottom: 32px; left: -16px;
+      padding: 15px 18px; background: #151512; border: 1px solid var(--line);
+      box-shadow: 0 12px 35px rgba(0,0,0,.35); color: var(--muted); font-size: 11px;
+    }
+    .floating-note strong { display: block; margin-bottom: 5px; color: var(--gold-light); font-size: 12px; letter-spacing: 1px; }
+
+    footer {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #77746c; font-size: 10px; letter-spacing: .4px;
+    }
+    .footer-brand { color: #b5a67f; letter-spacing: 1.8px; }
+
+    @media (max-width: 800px) {
+      .topbar { min-height: 78px; }
+      main { grid-template-columns: 1fr; gap: 38px; padding: 58px 0 52px; }
+      .hero-copy { text-align: center; }
+      .eyebrow { justify-content: center; }
+      .eyebrow::after { content: ""; width: 34px; height: 1px; background: var(--gold); }
+      h1, .intro { margin-left: auto; margin-right: auto; }
+      .actions { margin-left: auto; margin-right: auto; }
+      .trust-line { justify-content: center; }
+      .visual { min-height: 420px; }
+      .showcase { min-height: 370px; }
+      .floating-note { left: max(0px, calc(50% - 210px)); bottom: 7px; }
+    }
+    @media (max-width: 480px) {
+      .topbar, main, footer { width: calc(100% - 34px); }
+      .brand-mark { width: 40px; height: 40px; }
+      .brand-name { font-size: 13px; letter-spacing: 2.7px; }
+      .brand-caption { font-size: 8px; letter-spacing: 2.1px; }
+      .top-link { font-size: 11px; }
+      main { padding-top: 45px; }
+      h1 { font-size: clamp(42px, 12vw, 58px); letter-spacing: -1px; }
+      .intro { font-size: 14px; }
+      .actions { grid-template-columns: 1fr; max-width: 340px; }
+      .action { min-height: 55px; }
+      .visual { min-height: 365px; }
+      .halo { width: 320px; }
+      .showcase { width: min(100%, 310px); min-height: 330px; padding: 23px; }
+      .monogram .lm { font-size: 86px; }
+      .monogram .exclusive { font-size: 9px; letter-spacing: 4px; }
+      .floating-note { left: 0; bottom: 0; }
+      footer { padding: 17px 0; flex-direction: column; justify-content: center; text-align: center; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
 </head>
 <body>
-  <div class="announcement">SELEÇÃO EXCLUSIVA <span>✦</span> PEDIDOS PELO WHATSAPP</div>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="L&M Exclusive início">
-      <span class="brand-mark">L<span>&</span>M</span><span class="brand-sub">EXCLUSIVE</span>
-    </a>
-    <button class="icon-button cart-trigger" id="openCart" aria-label="Abrir sacola">
-      <span aria-hidden="true">♧</span><span class="cart-label">Sacola</span><b id="cartCount">0</b>
-    </button>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="hero-glow"></div>
-      <p class="eyebrow">BELEZA • CUIDADO • ESTILO</p>
-      <h1>Pequenos detalhes.<br><em>Presença marcante.</em></h1>
-      <p class="hero-copy">Encontre o seu próximo favorito na seleção L&M Exclusive.</p>
-      <a class="button button-gold" href="#catalogo">Explorar coleção <span aria-hidden="true">↘</span></a>
-      <div class="hero-note"><span class="sparkle">✦</span> Escolhas especiais para você e para presentear</div>
-    </section>
-    <section class="trust-row" aria-label="Informações da loja">
-      <div><span>◇</span><small>Atendimento<br>próximo</small></div>
-      <div><span>✓</span><small>Pedido simples<br>pelo WhatsApp</small></div>
-      <div><span>♡</span><small>Seleção<br>especial</small></div>
-    </section>
-    <section class="collections-section" aria-label="Coleções especiais">
-      <div class="collection-block collection-primary" id="colecao-principal">
-        <div class="collection-heading"><div><p class="eyebrow">A ESCOLHA DA L&M</p><h2>Principal <em>seleção</em></h2><p>Produtos para conhecer primeiro.</p></div><a href="#catalogo" class="collection-see-all">Ver catálogo ↗</a></div>
-        <div class="collection-track" id="collectionPrincipal"></div>
-      </div>
-      <div class="collection-block" id="colecao-destaques">
-        <div class="collection-heading"><div><p class="eyebrow">ESCOLHAS ESPECIAIS</p><h2>Em <em>destaque</em></h2><p>Itens que merecem sua atenção.</p></div><a href="#catalogo" class="collection-see-all">Ver todos ↗</a></div>
-        <div class="collection-track" id="collectionDestaques"></div>
-      </div>
-      <div class="collection-block collection-new" id="colecao-lancamentos">
-        <div class="collection-heading"><div><p class="eyebrow">ACABOU DE CHEGAR</p><h2>Últimos <em>lançamentos</em></h2><p>Novidades da seleção L&M Exclusive.</p></div><a href="#catalogo" class="collection-see-all">Explorar ↗</a></div>
-        <div class="collection-track" id="collectionLancamentos"></div>
-      </div>
-    </section>
-    <section class="catalog-section" id="catalogo">
-      <div class="section-heading">
-        <p class="eyebrow">DESCUBRA A SELEÇÃO</p><h2>Seu próximo <em>favorito</em></h2>
-        <p>Escolha com calma. Se tiver dúvidas, fale com a gente.</p>
-      </div>
-      <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar produto..." autocomplete="off" aria-label="Buscar produto"><kbd>⌘ K</kbd></label>
-      <div class="filters" id="filters" aria-label="Filtrar por categoria"></div>
-      <div class="catalog-toolbar"><span id="resultCount">Produtos selecionados</span>
-        <select id="sortProducts" aria-label="Ordenar produtos">
-          <option value="featured">Destaques</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="name">Nome A–Z</option>
-        </select>
-      </div>
-      <div class="product-grid" id="products" aria-live="polite"></div>
-      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nenhum produto encontrado</h3><p>Tente outra busca ou categoria.</p></div>
-    </section>
-    <section class="help-card">
-      <div class="help-icon">✦</div>
-      <div><p class="eyebrow">PRECISA DE AJUDA?</p><h2>Vamos encontrar<br>o ideal para você.</h2><p>Consulte disponibilidade, entrega e formas de pagamento diretamente com a loja.</p></div>
-      <a class="button button-dark" id="helpWhatsapp" href="https://wa.me/554874004700" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp ↗</a>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#"><span class="brand-mark">L<span>&</span>M</span><span class="brand-sub">EXCLUSIVE</span></a>
-    <p>Beleza, cuidado e estilo em um só lugar.</p>
-    <small>© <span id="year"></span> L&M Exclusive. Preços e disponibilidade sujeitos à confirmação.</small>
-  </footer>
-  <nav class="mobile-bottom-nav" aria-label="Atalhos">
-    <a href="#" class="bottom-link"><span>⌂</span>Início</a>
-    <a href="#catalogo" class="bottom-link"><span>⌕</span>Explorar</a>
-    <button id="openCartBottom" class="bottom-link"><span>♧<b id="cartCountBottom">0</b></span>Sacola</button>
-    <a href="https://wa.me/554874004700" class="bottom-link" target="_blank" rel="noopener noreferrer"><span>☏</span>Contato</a>
-  </nav>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Página inicial L&M Exclusive">
+        <span class="brand-mark">L&amp;M</span>
+        <span>
+          <span class="brand-name">L&amp;M EXCLUSIVE</span>
+          <span class="brand-caption">ESTILO · IDENTIDADE · VOCÊ</span>
+        </span>
+      </a>
+      <!-- Atalho de login no cabeçalho. -->
+      <a class="top-link" href="login.html">Acessar minha conta ↗</a>
+    </header>
 
-  <div class="product-modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
-    <button class="modal-backdrop" id="closeProductBackdrop" aria-label="Fechar detalhes do produto"></button>
-    <section class="product-modal-panel">
-      <button class="close-button product-modal-close" id="closeProductModal" aria-label="Fechar detalhes">×</button>
-      <div class="product-gallery">
-        <div class="gallery-main" id="galleryMain">
-          <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Imagem anterior">‹</button>
-          <div class="gallery-image-wrap" id="galleryImageWrap"></div>
-          <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Próxima imagem">›</button>
-          <span class="gallery-counter" id="galleryCounter">1 / 1</span>
+    <main>
+      <section class="hero-copy" aria-labelledby="main-title">
+        <div class="eyebrow">Sua experiência começa aqui</div>
+        <h1 id="main-title">Seu estilo.<br>Sua essência.<br><span>Seu exclusivo.</span></h1>
+        <p class="intro">Bem-vindo à L&amp;M Exclusive. Explore nossa seleção, descubra seus próximos favoritos e acesse sua área exclusiva em um só lugar.</p>
+
+        <!-- Os dois caminhos principais pedidos: login e catálogo. -->
+        <div class="actions">
+          <a class="action action-primary" href="login.html">
+            <span>Entrar na minha conta</span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="action action-secondary" href="catalogo/catalogo.html">
+            <span>Explorar catálogo</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Miniaturas das imagens"></div>
-      </div>
-      <div class="product-modal-copy">
-        <p class="product-category" id="modalProductCategory"></p>
-        <h2 id="modalProductName"></h2>
-        <strong class="modal-product-price" id="modalProductPrice"></strong>
-        <p id="modalProductDescription"></p>
-        <p class="modal-product-note">Consulte disponibilidade, entrega e formas de pagamento com a L&M Exclusive.</p>
-        <button class="button button-dark modal-add-button" id="modalAddToCart">Adicionar à sacola</button>
-        <button class="modal-whatsapp-link" id="modalAskWhatsapp">Tirar dúvidas pelo WhatsApp ↗</button>
-      </div>
-    </section>
+
+        <div class="trust-line" aria-label="Diferenciais da loja">
+          <span><span class="tiny-star">✦</span> Seleção exclusiva</span>
+          <span><span class="tiny-star">✦</span> Sua conta L&amp;M</span>
+          <span><span class="tiny-star">✦</span> Atendimento próximo</span>
+        </div>
+      </section>
+
+      <section class="visual" aria-label="Apresentação da marca L&M Exclusive">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="showcase">
+          <div class="showcase-top">
+            <span class="mini-label">Uma escolha só sua</span>
+            <span class="seal">L&amp;M</span>
+          </div>
+          <div class="monogram">
+            <div class="lm">L&amp;M</div>
+            <div class="rule"></div>
+            <div class="exclusive">EXCLUSIVE</div>
+            <div class="motto">Elegância em cada detalhe.</div>
+          </div>
+          <div class="showcase-bottom">
+            <span class="mini-label">Coleção selecionada</span>
+            <span class="corner-note">DESDE SEMPRE, ÚNICA</span>
+          </div>
+        </div>
+        <div class="floating-note">
+          <strong>SEJA BEM-VINDO</strong>
+          Um universo pensado para você.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="currentYear"></span> <span class="footer-brand">L&amp;M EXCLUSIVE</span>. Todos os direitos reservados.</span>
+      <span>Elegância em cada detalhe.</span>
+    </footer>
   </div>
-  <div class="scrim" id="scrim"></div>
-  <aside class="cart-sheet" id="cartSheet" aria-label="Sua sacola" aria-hidden="true">
-    <div class="sheet-handle"></div>
-    <div class="sheet-header"><div><p class="eyebrow">L&M EXCLUSIVE</p><h2>Sua sacola <span id="cartTitleCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Fechar sacola">×</button></div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer"><div class="total-row"><span>Total estimado</span><strong id="cartTotal">R$ 0,00</strong></div>
-      <p class="fine-print">Frete, disponibilidade e pagamento serão confirmados no atendimento. Enviar não confirma automaticamente o pedido.</p>
-      <button class="button button-whatsapp checkout" id="checkout" disabled>Enviar pedido pelo WhatsApp ↗</button>
-    </div>
-  </aside>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // Atualiza automaticamente o ano do rodapé.
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // IMPORTANTE: se os arquivos tiverem outros nomes ou estiverem em pastas,
+    // atualize os href dos links acima para apontarem aos caminhos corretos.
+    // Esta página é a entrada do site; ela não precisa acessar dados privados.
+  </script>
 </body>
 </html>

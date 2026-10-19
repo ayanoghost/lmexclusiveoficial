@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Explore a seleção L&M Exclusive e envie seu pedido pelo WhatsApp.">
+  <title>L&M Exclusive — Beleza & Estilo</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">SELEÇÃO EXCLUSIVA <span>✦</span> PEDIDOS PELO WHATSAPP</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="L&M Exclusive início">
+      <span class="brand-mark">L<span>&</span>M</span><span class="brand-sub">EXCLUSIVE</span>
+    </a>
+    <button class="icon-button cart-trigger" id="openCart" aria-label="Abrir sacola">
+      <span aria-hidden="true">♧</span><span class="cart-label">Sacola</span><b id="cartCount">0</b>
+    </button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <p class="eyebrow">BELEZA • CUIDADO • ESTILO</p>
+      <h1>Pequenos detalhes.<br><em>Presença marcante.</em></h1>
+      <p class="hero-copy">Encontre o seu próximo favorito na seleção L&M Exclusive.</p>
+      <a class="button button-gold" href="#catalogo">Explorar coleção <span aria-hidden="true">↘</span></a>
+      <div class="hero-note"><span class="sparkle">✦</span> Escolhas especiais para você e para presentear</div>
+    </section>
+    <section class="trust-row" aria-label="Informações da loja">
+      <div><span>◇</span><small>Atendimento<br>próximo</small></div>
+      <div><span>✓</span><small>Pedido simples<br>pelo WhatsApp</small></div>
+      <div><span>♡</span><small>Seleção<br>especial</small></div>
+    </section>
+    <section class="collections-section" aria-label="Coleções especiais">
+      <div class="collection-block collection-primary" id="colecao-principal">
+        <div class="collection-heading"><div><p class="eyebrow">A ESCOLHA DA L&M</p><h2>Principal <em>seleção</em></h2><p>Produtos para conhecer primeiro.</p></div><a href="#catalogo" class="collection-see-all">Ver catálogo ↗</a></div>
+        <div class="collection-track" id="collectionPrincipal"></div>
+      </div>
+      <div class="collection-block" id="colecao-destaques">
+        <div class="collection-heading"><div><p class="eyebrow">ESCOLHAS ESPECIAIS</p><h2>Em <em>destaque</em></h2><p>Itens que merecem sua atenção.</p></div><a href="#catalogo" class="collection-see-all">Ver todos ↗</a></div>
+        <div class="collection-track" id="collectionDestaques"></div>
+      </div>
+      <div class="collection-block collection-new" id="colecao-lancamentos">
+        <div class="collection-heading"><div><p class="eyebrow">ACABOU DE CHEGAR</p><h2>Últimos <em>lançamentos</em></h2><p>Novidades da seleção L&M Exclusive.</p></div><a href="#catalogo" class="collection-see-all">Explorar ↗</a></div>
+        <div class="collection-track" id="collectionLancamentos"></div>
+      </div>
+    </section>
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <p class="eyebrow">DESCUBRA A SELEÇÃO</p><h2>Seu próximo <em>favorito</em></h2>
+        <p>Escolha com calma. Se tiver dúvidas, fale com a gente.</p>
+      </div>
+      <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar produto..." autocomplete="off" aria-label="Buscar produto"><kbd>⌘ K</kbd></label>
+      <div class="filters" id="filters" aria-label="Filtrar por categoria"></div>
+      <div class="catalog-toolbar"><span id="resultCount">Produtos selecionados</span>
+        <select id="sortProducts" aria-label="Ordenar produtos">
+          <option value="featured">Destaques</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="name">Nome A–Z</option>
+        </select>
+      </div>
+      <div class="product-grid" id="products" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nenhum produto encontrado</h3><p>Tente outra busca ou categoria.</p></div>
+    </section>
+    <section class="help-card">
+      <div class="help-icon">✦</div>
+      <div><p class="eyebrow">PRECISA DE AJUDA?</p><h2>Vamos encontrar<br>o ideal para você.</h2><p>Consulte disponibilidade, entrega e formas de pagamento diretamente com a loja.</p></div>
+      <a class="button button-dark" id="helpWhatsapp" href="https://wa.me/554874004700" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp ↗</a>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">L<span>&</span>M</span><span class="brand-sub">EXCLUSIVE</span></a>
+    <p>Beleza, cuidado e estilo em um só lugar.</p>
+    <small>© <span id="year"></span> L&M Exclusive. Preços e disponibilidade sujeitos à confirmação.</small>
+  </footer>
+  <nav class="mobile-bottom-nav" aria-label="Atalhos">
+    <a href="#" class="bottom-link"><span>⌂</span>Início</a>
+    <a href="#catalogo" class="bottom-link"><span>⌕</span>Explorar</a>
+    <button id="openCartBottom" class="bottom-link"><span>♧<b id="cartCountBottom">0</b></span>Sacola</button>
+    <a href="https://wa.me/554874004700" class="bottom-link" target="_blank" rel="noopener noreferrer"><span>☏</span>Contato</a>
+  </nav>
+
+  <div class="product-modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <button class="modal-backdrop" id="closeProductBackdrop" aria-label="Fechar detalhes do produto"></button>
+    <section class="product-modal-panel">
+      <button class="close-button product-modal-close" id="closeProductModal" aria-label="Fechar detalhes">×</button>
+      <div class="product-gallery">
+        <div class="gallery-main" id="galleryMain">
+          <button class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Imagem anterior">‹</button>
+          <div class="gallery-image-wrap" id="galleryImageWrap"></div>
+          <button class="gallery-arrow gallery-next" id="galleryNext" aria-label="Próxima imagem">›</button>
+          <span class="gallery-counter" id="galleryCounter">1 / 1</span>
+        </div>
+        <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Miniaturas das imagens"></div>
+      </div>
+      <div class="product-modal-copy">
+        <p class="product-category" id="modalProductCategory"></p>
+        <h2 id="modalProductName"></h2>
+        <strong class="modal-product-price" id="modalProductPrice"></strong>
+        <p id="modalProductDescription"></p>
+        <p class="modal-product-note">Consulte disponibilidade, entrega e formas de pagamento com a L&M Exclusive.</p>
+        <button class="button button-dark modal-add-button" id="modalAddToCart">Adicionar à sacola</button>
+        <button class="modal-whatsapp-link" id="modalAskWhatsapp">Tirar dúvidas pelo WhatsApp ↗</button>
+      </div>
+    </section>
+  </div>
+  <div class="scrim" id="scrim"></div>
+  <aside class="cart-sheet" id="cartSheet" aria-label="Sua sacola" aria-hidden="true">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header"><div><p class="eyebrow">L&M EXCLUSIVE</p><h2>Sua sacola <span id="cartTitleCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Fechar sacola">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer"><div class="total-row"><span>Total estimado</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <p class="fine-print">Frete, disponibilidade e pagamento serão confirmados no atendimento. Enviar não confirma automaticamente o pedido.</p>
+      <button class="button button-whatsapp checkout" id="checkout" disabled>Enviar pedido pelo WhatsApp ↗</button>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

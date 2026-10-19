@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171614">
+  <title>Entrar | L&M Exclusive</title>
+  <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+  <main class="login-shell">
+    <section class="brand-panel" aria-label="Apresentação da L&M Exclusive">
+      <div class="brand">
+        <div class="brand-mark">L&amp;M</div>
+        <div>
+          <div class="brand-name">L&amp;M EXCLUSIVE</div>
+          <div class="brand-caption">SEU ESTILO, SUA EXPERIÊNCIA</div>
+        </div>
+      </div>
+      <div class="brand-copy">
+        <div class="eyebrow">Sua área exclusiva</div>
+        <h1>Mais perto de tudo o que você ama.</h1>
+        <p>Acompanhe suas compras, consulte seu saldo e veja seu progresso para conquistar brindes especiais.</p>
+      </div>
+      <div class="brand-foot">EXCLUSIVIDADE EM CADA DETALHE · L&amp;M EXCLUSIVE</div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-content">
+        <div class="mobile-brand">
+          <div class="brand-mark">L&amp;M</div>
+          <div>
+            <div class="brand-name">L&amp;M EXCLUSIVE</div>
+            <div class="brand-caption">SUA ÁREA EXCLUSIVA</div>
+          </div>
+        </div>
+
+        <div class="form-heading">
+          <div class="eyebrow">Bem-vindo(a) de volta</div>
+          <h2>Entre na sua conta</h2>
+          <p>Informe seus dados para acessar sua área de cliente.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="username">Nome de usuário</label>
+            <input id="username" name="username" type="text" placeholder="Digite seu nome de usuário" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <div class="input-wrap">
+              <input class="password-input" id="password" name="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+              <button class="show-password" id="togglePassword" type="button" aria-label="Mostrar senha">Mostrar</button>
+            </div>
+
+            <span id="error-message"></span>
+          </div>
+          
+          <button class="submit-button" type="submit">ENTRAR NA MINHA CONTA</button>
+          <div class="message" id="formMessage" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="divider">ACESSO EXCLUSIVO</div>
+        <div class="signup-note">Ainda não tem uma conta?<br><strong>Entre em contato com a L&amp;M Exclusive</strong> para solicitar seu acesso.</div>
+        
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/login.js"></script>
+
+  <script>
+    const passwordInput = document.getElementById("password");
+    
+    // Permite ao usuário conferir a senha digitada.
+    document.getElementById("togglePassword").addEventListener("click", function () {
+      const isHidden = passwordInput.type === "password";
+      passwordInput.type = isHidden ? "text" : "password";
+      this.textContent = isHidden ? "Ocultar" : "Mostrar";
+      this.setAttribute("aria-label", isHidden ? "Ocultar senha" : "Mostrar senha");
+    });
+  </script>
+</body>
+</html>

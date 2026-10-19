@@ -1,0 +1,143 @@
+ /* =========================================================
+       L&M EXCLUSIVE — ESTILOS DA ÁREA DO CLIENTE
+       Edite as cores abaixo para personalizar a identidade visual.
+       ========================================================= */
+    :root {
+      --fundo: #f5f3f0;
+      --cartao: #ffffff;
+      --texto: #242321;
+      --suave: #77736d;
+      --dourado: #b58b48;
+      --dourado-claro: #f4ead8;
+      --borda: #e9e4dc;
+      --verde: #24845c;
+      --vermelho: #b84a4a;
+      --sombra: 0 12px 35px rgba(37, 30, 20, .06);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button { font: inherit; cursor: pointer; }
+    .app { max-width: 1180px; margin: auto; padding: 24px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; margin-bottom: 28px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      background: #242321; color: var(--dourado); border-radius: 15px;
+      font-family: Georgia, serif; font-size: 18px; letter-spacing: -2px;
+    }
+    .brand-name { font-family: Georgia, serif; font-size: 20px; letter-spacing: 1.5px; }
+    .brand-sub { color: var(--suave); font-size: 11px; letter-spacing: 2px; margin-top: 3px; }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .pill {
+      border: 1px solid var(--borda); background: var(--cartao); color: var(--texto);
+      border-radius: 999px; padding: 10px 14px; font-size: 13px;
+    }
+    .welcome { margin: 12px 0 22px; }
+    .eyebrow { color: var(--dourado); font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { font-family: Georgia, serif; font-weight: 500; font-size: clamp(28px, 4vw, 40px); margin: 8px 0; }
+    .muted { color: var(--suave); }
+    .summary {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px; margin-bottom: 18px;
+    }
+    .card {
+      background: var(--cartao); border: 1px solid var(--borda); border-radius: 20px;
+      padding: 22px; box-shadow: var(--sombra); min-width: 0;
+    }
+    .metric-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .metric-label { font-size: 13px; color: var(--suave); }
+    .metric-icon {
+      width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--dourado-claro); color: #89642b; font-size: 17px;
+    }
+    .metric-value { font-size: clamp(23px, 3vw, 31px); font-weight: 700; margin: 15px 0 5px; overflow-wrap: anywhere; }
+    .metric-note { color: var(--suave); font-size: 12px; }
+    .positive { color: var(--verde); }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 18px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+    h2 { margin: 0; font-size: 17px; }
+    .small { font-size: 12px; color: var(--suave); }
+    .purchase-list { display: grid; gap: 0; }
+    .purchase {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 15px 0; border-top: 1px solid var(--borda);
+    }
+    .purchase:first-child { border-top: 0; padding-top: 0; }
+    .purchase-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .purchase-thumb {
+      width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center;
+      background: #f1eee8; font-size: 20px; flex: 0 0 auto;
+    }
+    .purchase-name { font-weight: 650; font-size: 14px; overflow-wrap: anywhere; }
+    .purchase-date { color: var(--suave); font-size: 12px; margin-top: 4px; }
+    .purchase-price { font-weight: 700; white-space: nowrap; font-size: 14px; }
+    .status { display: inline-block; margin-top: 5px; font-size: 11px; color: var(--verde); }
+    .invoice-card {
+      background: #242321; color: #fff; border-radius: 20px; padding: 22px;
+      position: relative; overflow: hidden; min-height: 210px;
+    }
+    .invoice-card:after {
+      content: ""; position: absolute; width: 190px; height: 190px; border: 1px solid rgba(181,139,72,.35);
+      border-radius: 50%; right: -60px; bottom: -95px; box-shadow: 0 0 0 22px rgba(181,139,72,.05), 0 0 0 44px rgba(181,139,72,.04);
+    }
+    .invoice-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .invoice-brand { font-family: Georgia, serif; letter-spacing: 1.4px; color: #e5c48d; }
+    .invoice-chip { width: 35px; height: 25px; border: 1px solid #b6a98e; border-radius: 6px; background: linear-gradient(135deg,#d5c8a9,#8d805e); }
+    .invoice-label { color: #c9c5bd; font-size: 12px; margin-top: 27px; }
+    .invoice-value { font-size: 30px; font-weight: 700; margin: 5px 0 16px; }
+    .invoice-bottom { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #d0ccc5; position: relative; z-index: 1; }
+    .invoice-bottom strong { display: block; color: #fff; font-size: 13px; margin-top: 4px; }
+    .invoice-detail { display: flex; justify-content: space-between; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--borda); font-size: 13px; }
+    .invoice-detail:last-child { border-bottom: 0; }
+    .gift-card { margin-top: 18px; }
+    .gift-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .gift-emoji { font-size: 25px; }
+    .progress-track { width: 100%; height: 10px; background: #eee8de; border-radius: 99px; overflow: hidden; margin: 18px 0 9px; }
+    .progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg,#b58b48,#e2c58e); border-radius: inherit; transition: width .35s ease; }
+    .progress-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--suave); }
+    .gift-message { margin-top: 14px; padding: 12px; background: #faf6ee; border-radius: 12px; color: #745526; font-size: 12px; line-height: 1.5; }
+    .btn {
+      border: 0; border-radius: 12px; background: var(--texto); color: #fff; padding: 11px 15px;
+      font-size: 13px; font-weight: 650;
+    }
+    .btn.gold { background: var(--dourado); color: #fff; }
+    .btn.outline { background: #fff; color: var(--texto); border: 1px solid var(--borda); }
+    .empty { padding: 20px 0; color: var(--suave); font-size: 13px; }
+    footer { text-align: center; color: var(--suave); font-size: 11px; padding: 26px 0 8px; }
+
+    /* Janela simples para demonstração de edição dos dados */
+    dialog {
+      width: min(520px, calc(100% - 28px)); border: 1px solid var(--borda); border-radius: 18px;
+      padding: 22px; box-shadow: 0 25px 90px #0003;
+    }
+    dialog::backdrop { background: #17151288; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 12px; color: var(--suave); }
+    .field input { width: 100%; border: 1px solid var(--borda); border-radius: 10px; padding: 11px; font: inherit; }
+    .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+    @media (max-width: 780px) {
+      .app { padding: 17px; }
+      .summary { grid-template-columns: 1fr; gap: 12px; }
+      .card { padding: 18px; }
+      .layout { grid-template-columns: 1fr; }
+      header { align-items: flex-start; }
+      .header-actions .pill { display: none; }
+    }
+    @media (max-width: 420px) {
+      .brand-name { font-size: 17px; }
+      .brand-mark { width: 42px; height: 42px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .purchase-price { font-size: 13px; }
+    }

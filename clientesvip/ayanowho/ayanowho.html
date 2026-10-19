@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Cliente | L&M Exclusive</title>
+  <link rel="stylesheet" href="../../assets/css/clientesvip.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">L&amp;M</div>
+        <div>
+          <div class="brand-name">L&amp;M EXCLUSIVE</div>
+          <div class="brand-sub">ÁREA DO CLIENTE</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="pill">✦ Clube Exclusive</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div class="eyebrow">Bem-vindo de volta</div>
+        <h1>Olá, <span id="customerName">Mariana Silva</span> 👋</h1>
+        <p class="muted">Acompanhe seu saldo, seus benefícios e suas compras em um só lugar.</p>
+      </section>
+
+      <section class="summary" aria-label="Resumo da conta">
+        <article class="card">
+          <div class="metric-top"><span class="metric-label">Saldo disponível</span><span class="metric-icon">◈</span></div>
+          <div class="metric-value" id="balanceValue">R$ 245,80</div>
+          <div class="metric-note">Crédito disponível na sua conta Exclusive</div>
+        </article>
+        <article class="card">
+          <div class="metric-top"><span class="metric-label">Lucro / cashback acumulado</span><span class="metric-icon">↗</span></div>
+          <div class="metric-value positive" id="profitValue">R$ 32,50</div>
+          <div class="metric-note">Benefícios acumulados em compras</div>
+        </article>
+        <article class="card">
+          <div class="metric-top"><span class="metric-label">Fatura do cartão</span><span class="metric-icon">▤</span></div>
+          <div class="metric-value" id="invoiceSummary">R$ 189,90</div>
+          <div class="metric-note" id="invoiceDueSummary">Vencimento: 10/11/2026</div>
+        </article>
+      </section>
+
+      <section class="layout">
+        <div class="left-column">
+          <article class="card">
+            <div class="section-head">
+              <div><h2>Histórico de compras</h2><div class="small">Suas movimentações recentes</div></div>
+            </div>
+            <div class="purchase-list" id="purchaseList"></div>
+          </article>
+
+          <article class="card gift-card">
+            <div class="gift-top">
+              <div><div class="eyebrow">Clube de benefícios</div><h2 style="margin-top:7px">Seu próximo brinde</h2></div>
+              <div class="gift-emoji">🎁</div>
+            </div>
+            <p class="muted" style="font-size:13px;line-height:1.6">Quanto mais você compra, mais perto fica de desbloquear uma surpresa exclusiva.</p>
+            <div class="progress-track" role="progressbar" aria-label="Progresso para ganhar brinde" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="progress-fill" id="giftProgressFill"></div>
+            </div>
+            <div class="progress-meta"><span id="giftSpentText">R$ 0,00 acumulados</span><strong id="giftPercent">0%</strong></div>
+            <div class="gift-message" id="giftMessage"></div>
+          </article>
+        </div>
+
+        <aside>
+          <article class="invoice-card">
+            <div class="invoice-top"><div class="invoice-brand">L&amp;M EXCLUSIVE</div><div class="invoice-chip"></div></div>
+            <div class="invoice-label">FATURA ATUAL DO CARTÃO</div>
+            <div class="invoice-value" id="cardInvoiceValue">R$ 189,90</div>
+            <div class="invoice-bottom">
+              <div>CLIENTE<strong id="cardHolder">MARIANA SILVA</strong></div>
+              <div>VENCIMENTO<strong id="cardDue">10/11/2026</strong></div>
+            </div>
+          </article>
+
+          <article class="card" style="margin-top:16px">
+            <div class="section-head"><div><h2>Detalhes da fatura</h2><div class="small">Resumo do cartão L&amp;M</div></div></div>
+            <div class="invoice-detail"><span class="muted">Valor da fatura</span><strong id="invoiceDetailValue">R$ 189,90</strong></div>
+            <div class="invoice-detail"><span class="muted">Vencimento</span><strong id="invoiceDetailDue">10/11/2026</strong></div>
+            <div class="invoice-detail"><span class="muted">Status</span><strong id="invoiceStatus" class="positive">Em aberto</strong></div>
+            <button class="btn gold" id="payInfoButton" style="width:100%;margin-top:17px">Ver informações de pagamento</button>
+            <p class="small" style="line-height:1.5;margin-bottom:0">em desenvolvimento</p>
+          </article>
+        </aside>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> L&amp;M Exclusive · Área do cliente</footer>
+  </div>
+
+  
+  <script src="../../assets/js/bancodadosmldemo/ayanowho/ayano.js"></script>
+</body>
+</html>
