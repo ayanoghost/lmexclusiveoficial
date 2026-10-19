@@ -2,7 +2,7 @@
         const usuariosCadastrados = {
             "ayano who": { senha: "489920", pagina: "clientesvip/ayanowho/ayanowho.html" },
             "lorena ceo":  { senha: "abc", pagina: "clientesvip/lorenaceo/lorenaceo.html" },
-            "maria": { senha: "xyz", pagina: "painel_maria.html" }
+            "katia raupp": { senha: "xyz", pagina: "clientesvip/katiaraupp/katiaraupp.html" }
         };
 
         // 2. Captura o envio do formulário

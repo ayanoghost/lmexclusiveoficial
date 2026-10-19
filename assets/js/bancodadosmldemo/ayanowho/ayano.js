@@ -12,7 +12,7 @@
       giftSpent: 25.00,
       giftGoal: 250,
       purchases: [
-        { name: "ReRelógio LED Quadrado Digital à Prova d'Água", date: "25/09/2026", price: 25.00, icon: "⌚", status: "Compra concluída" },
+        { name: "Relógio LED Quadrado Digital à Prova d'Água", date: "25/09/2026", price: 25.00, icon: "⌚", status: "Compra concluída" },
        /* 
          { name: "Perfume Amakha Paris", date: "14/10/2026", price: 129.90, icon: "✧", status: "Compra concluída" },
         { name: "Kit de cuidados pessoais", date: "08/10/2026", price: 89.90, icon: "◇", status: "Compra concluída" },
